@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Emailing solution</title>
+  </head>
+
+  <body>
+    <h3>Send Emails:</h3>
+
+    <form
+      action="http://127.0.0.1:8081/send"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      Organisation: <input type="text" name="organisationName" /> <br />
+      Subject: <input type="text" name="subject" /><br />
+      Body: <input type="text" name="body" /><br />
+      Email: <input type="email" name="email" /><br />
+      CSV File: <input type="file" name="csvFileEmail" /><br />
+      Attachments: <input type="file" name="attachment" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+
+const EMAIL_USER ='aditya.sanil@somaiya.edu';
+const EMAIL_PASS ='AdityaSanil116';
+
+// const EMAIL_USER ='team@flookup.com';
+// const EMAIL_PASS ='Flookup@123';
+
+var transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: EMAIL_USER,
+        pass: EMAIL_PASS
+    }
+});
+
+module.exports = {
+
+    readHTMLTemplate: function (templatePath) {
+        return new Promise((resolve, reject) => {
+            fs.readFile(templatePath, {encoding: 'utf-8'}, function (err, html) {
+                if (err) {
+                    reject(err);
+                }
+                else {
+                    resolve(html);
+                }
+            });
+        });
+    },
+
+    sendMail: async function (mailOptions) {
+        try {
+            var i = 1;
+            let info = await transporter.sendMail(mailOptions);
+            console.log(i);
+            console.log(info);
+            return true;
+            ++i;
+        } catch (e) {
+            //console.log(e);
+            return false;
+        }
+    }
+};
