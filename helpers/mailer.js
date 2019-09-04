@@ -34,12 +34,9 @@ module.exports = {
 
     sendMail: async function (mailOptions) {
         try {
-            var i = 1;
             let info = await transporter.sendMail(mailOptions);
-            console.log(i);
             console.log(info);
             return true;
-            ++i;
         } catch (e) {
             //console.log(e);
             return false;
