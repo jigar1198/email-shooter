@@ -1,11 +1,8 @@
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 
-const EMAIL_USER ='aditya.sanil@somaiya.edu';
-const EMAIL_PASS ='AdityaSanil116';
-
-// const EMAIL_USER ='team@flookup.com';
-// const EMAIL_PASS ='Flookup@123';
+const EMAIL_USER ='team@flookup.com';
+const EMAIL_PASS ='Flookup@123';
 
 var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
